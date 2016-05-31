@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="pomo">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Bloc Base Project</title>
-    <link rel="stylesheet" href="/styles/style.css">
+    <title>Pomodoro Timer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" href="/styles/style.css">    
 </head>
 <body>
-    <script src="/scripts/app.js"></script>
-    test text
+    <ui-view/>
+    <script src="../scripts/angular.min.js"></script>    
+    <script src="../scripts/angular-ui-router.min.js"></script>
+    <script src="../scripts/app.js"></script>
+    
+    <!--controllers -->
+    <script src="../scripts/controllers/TimerCtrl.js"></script>
+    
+    <!--services -->
+    <script src="../scripts/services/Timer.js"></script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+.block {
+    position: fixed;
+    left: 45%;
+    top: 25%;
+}
+
+button {
+    height: 50px;
+    width: 100px;
+    color: grey;
+    border-radius: 10px;
+    border: none;    
+}
+.start-button {
+    font-size: 20px;
+    color: white;
+}
+.time {
+    text-align: center;
+    font-size: 42px;
+}
