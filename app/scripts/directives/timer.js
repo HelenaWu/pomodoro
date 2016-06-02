@@ -1,9 +1,10 @@
 (function(){
-    function Timer($interval){
+    function Timer($interval, TIME){
         var minutes;
         var promise;
+        var sessions = 0;
         var toSeconds = function(minutes){
-            return 60 * minutes;
+            return TIME.MINSINHOUR * minutes;
         }        
  
         return{
@@ -21,14 +22,21 @@
                 scope.timeRemainingSecs = toSeconds(attrs.max);   
                 
                 scope.$watch(function(){
-                    if (scope.timeRemainingSecs == 0 ){
-                        scope.stop();            
+                    if (scope.timeRemainingSecs <= 0 ){
+                        scope.stop();  
                         scope.toggle();
                         scope.reset();
                     }
                 });
                 scope.reset = function(){
-                    scope.timeRemainingSecs = toSeconds(attrs.max);
+                    console.log('session' + sessions);
+                    if (sessions === TIME.LONG_BREAK_TURNS){
+                        scope.timeRemainingSecs = toSeconds(TIME.LONG_BREAK_DURATION);
+                        sessions = -2;
+                    }else{
+                        scope.timeRemainingSecs = toSeconds(attrs.max);              
+                        sessions +=1;                                                 
+                    }
                     if (angular.isDefined(promise)){
                         promise = undefined;
                     }
@@ -59,5 +67,5 @@
     };    
     angular 
         .module("pomo")
-        .directive('timer', ['$interval', Timer]);
+        .directive('timer', ['$interval', 'TIME', Timer]);
 })();
