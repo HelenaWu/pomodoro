@@ -1,9 +1,12 @@
 (function(){
-    function TimerCtrl(Timer){
-        this.timer = Timer;
+    function TimerCtrl($scope){
+        $scope.onBreak = false;
+        $scope.toggle = function(){
+            $scope.onBreak = !$scope.onBreak;
+        }
     }
     
     angular
         .module('pomo')
-        .controller('TimerCtrl', ['Timer', TimerCtrl]);
+        .controller('TimerCtrl', ['$scope', TimerCtrl]);
 })();

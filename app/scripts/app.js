@@ -9,7 +9,7 @@
             .state('timer', {
             url: '/' ,
             controller: 'TimerCtrl as timerCtrl',
-            templateUrl: '../templates/timer.html'
+            templateUrl: '../templates/index.html'
         });
     }
     
