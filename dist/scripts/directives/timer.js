@@ -6,7 +6,9 @@
         var toSeconds = function(minutes){
             return TIME.MINSINHOUR * minutes;
         }        
- 
+        var mySound = new buzz.sound("../assets/sounds/ding.mp3",{
+           preload: true
+        });
         return{
             templateUrl: "../templates/directives/timer.html",
             replace: true,
@@ -21,15 +23,17 @@
                 }   
                 scope.timeRemainingSecs = toSeconds(attrs.max);   
                 
-                scope.$watch(function(){
-                    if (scope.timeRemainingSecs <= 0 ){
-                        scope.stop();  
-                        scope.toggle();
+                scope.$watch('timeRemainingSecs', function(newVal, oldVal){
+                    if (newVal <= 0 ){
+                        scope.stop(); 
+                        mySound.play();
+                        if (attrs.toggle){
+                            scope.toggle();                            
+                        }
                         scope.reset();
                     }
                 });
                 scope.reset = function(){
-                    console.log('session' + sessions);
                     if (sessions === TIME.LONG_BREAK_TURNS){
                         scope.timeRemainingSecs = toSeconds(TIME.LONG_BREAK_DURATION);
                         sessions = -2;
