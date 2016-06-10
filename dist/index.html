@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <title>Pomodoro Timer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <link rel="stylesheet" href="/styles/style.css">    
+    <link rel="stylesheet" href="/styles/style.css">   
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>    
 </head>
 <body>
+    <div ng-include src="'../templates/task.html'"></div>
     <ui-view/>
     <script src="../scripts/angular.min.js"></script>    
     <script src="../scripts/angular-ui-router.min.js"></script>
-    <script src="../scripts/app.js"></script>
+    <script src="../scripts/app.js"></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.0/buzz.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
 
     <!--controllers -->
     <script src="../scripts/controllers/TimerCtrl.js"></script>
+    <script src="../scripts/controllers/TaskCtrl.js"></script>
     
     <!--directives -->
     <script src="../scripts/directives/timer.js"></script>
@@ -24,5 +31,6 @@
     
     <!--constants -->
     <script src="../scripts/contants/contant.js"></script>
+    
 </body>
 </html>

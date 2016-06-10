@@ -1,0 +1,17 @@
+<div class="sidebar" ng-controller="TaskCtrl">
+    <div class="action-section">
+        <h2>Task history</h2>
+        <form>
+            <input type="text" ng-model="item" />
+            <div class="add-task" >
+                <button ng-click="addMsg(item)">Add task</button>
+            </div>
+        </form>
+    </div>
+    <div class="items">
+        <div class="item" ng-repeat="task in tasks">
+            <p >{{task.text}}</p>       
+        </div>
+    </div>
+
+</div>

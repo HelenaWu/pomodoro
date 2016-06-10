@@ -1,7 +1,8 @@
 .block {
-    position: fixed;
-    left: 45%;
-    top: 25%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 button {
@@ -18,4 +19,45 @@ button {
 .time {
     text-align: center;
     font-size: 42px;
+}
+.sidebar{
+    height: 100vh;
+    width: 30%;
+    background-color: lightgrey;
+    padding: 10px;
+}
+.sidebar h2{
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+    padding-top: 30px;
+    margin: 0px;
+}
+.sidebar input{
+    width: 100%;
+    box-sizing: border-box;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.sidebar .add-task{
+    overflow: auto;
+}
+.sidebar button{
+    height: 30px;
+    width: 60px;
+    float: right; 
+    margin-bottom: 50px;
+}
+.sidebar .item{
+    background-color: white;
+    color: white;
+    font-family: 'Raleway', sans-serif;    
+    height: 30px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.sidebar .item:nth-child(odd){
+    background-color: dimgrey;
+}
+.sidebar .item:nth-child(even){
+    color: black;
 }
