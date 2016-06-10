@@ -9,8 +9,8 @@
         </form>
     </div>
     <div class="items">
-        <div class="item" ng-repeat="task in tasks">
-            <p >{{task.text}}</p>       
+        <div class="item" ng-repeat="task in tasks | orderBy :  timeCreated ">
+            <p>{{task.text}}</p>       
         </div>
     </div>
 

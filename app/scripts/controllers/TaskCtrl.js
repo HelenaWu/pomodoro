@@ -5,7 +5,8 @@
         $scope.item = "";
         $scope.addMsg = function(task){            
             $scope.tasks.$add({
-                text: task
+                text: task,
+                timeCreated: Date.now()
             });            
         };
     }

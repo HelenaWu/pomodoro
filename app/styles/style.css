@@ -52,8 +52,8 @@ button {
     color: white;
     font-family: 'Raleway', sans-serif;    
     height: 30px;
-    box-sizing: border-box;
-    text-align: center;
+    padding: 10px;
+    margin: 5px;
 }
 .sidebar .item:nth-child(odd){
     background-color: dimgrey;
