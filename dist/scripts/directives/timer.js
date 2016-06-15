@@ -20,6 +20,8 @@
                 scope.buttonText = "start";
                 scope.init = true;
                 scope.counting = false;
+                scope.timesInterrupted = 0;
+                
                 var decrement = function(){
                     return scope.timeRemainingSecs --;
                 }   
@@ -35,6 +37,9 @@
                         scope.reset();
                     }
                 });
+                scope.addInterruption = function(){
+                    scope.timesInterrupted +=1;
+                }
                 scope.reset = function(){
                     if (sessions === TIME.LONG_BREAK_TURNS){
                         scope.timeRemainingSecs = toSeconds(TIME.LONG_BREAK_DURATION);
@@ -63,7 +68,7 @@
                 };
                 scope.stop = function(){
                     scope.counting = false;
-                    scope.init = false;
+                    scope.init = false;                
                     if(angular.isDefined(promise)){
                         $interval.cancel(promise);
                         promise = undefined;
