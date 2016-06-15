@@ -1,4 +1,6 @@
 <div class="block">
     <div class="time">{{timeRemainingSecs | sectomin }}</div>
     <button class="start-button" ng-click="action()">{{buttonText}}</button>
+    <button class="start-button" ng-show="counting" ng-click="stop()">Stop</button>
+    <button class="start-button" ng-show="!counting && !init" ng-click="start()">Resume</button>
 </div>

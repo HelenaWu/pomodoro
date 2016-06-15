@@ -18,6 +18,8 @@
             },
             link: function(scope, element, attrs){
                 scope.buttonText = "start";
+                scope.init = true;
+                scope.counting = false;
                 var decrement = function(){
                     return scope.timeRemainingSecs --;
                 }   
@@ -45,7 +47,8 @@
                         promise = undefined;
                     }
                 };
-                scope.start = function(){            
+                scope.start = function(){ 
+                    scope.counting = true;
                     promise = $interval(decrement, 1000);
                 };
                 scope.action = function(){
@@ -59,6 +62,8 @@
                     }
                 };
                 scope.stop = function(){
+                    scope.counting = false;
+                    scope.init = false;
                     if(angular.isDefined(promise)){
                         $interval.cancel(promise);
                         promise = undefined;
