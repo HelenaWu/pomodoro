@@ -3,5 +3,6 @@
     <button class="start-button" ng-click="action()">{{buttonText}}</button>
     <button class="start-button" ng-show="counting" ng-click="stop(); addInterruption() ">Stop</button>
     <button class="start-button" ng-show="!counting && !init" ng-click="start()">Resume</button>
-    <div>Interruptions this session: {{timesInterrupted}}</div>
+    <p>Interruptions this session: {{timesInterrupted}}</p>
+    
 </div>
